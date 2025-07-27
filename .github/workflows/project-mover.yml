@@ -12,5 +12,5 @@ jobs:
       - uses: actions/add-to-project@v0.5.0
         with:
           # TODO: replace with real board URL after you create it
-          project-url: https://github.com/orgs/Test-user-dev-t/projects/1
+          project-url: https://github.com/users/Test-user-dev-t/projects/1
           github-token: ${{ secrets.GITHUB_TOKEN }}
