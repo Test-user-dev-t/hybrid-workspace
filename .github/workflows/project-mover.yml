@@ -1,0 +1,16 @@
+name: "Project board sync"
+
+on:
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  move-card:
+    if: github.event.pull_request.node_id != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.5.0
+        with:
+          # TODO: replace with real board URL after you create it
+          project-url: https://github.com/orgs/Test-user-dev-t/projects/1
+          github-token: ${{ secrets.GITHUB_TOKEN }}
