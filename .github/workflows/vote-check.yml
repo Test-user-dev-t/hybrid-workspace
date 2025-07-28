@@ -1,4 +1,4 @@
-name: "Multi-sig gate"
+name: 'Multi-sig gate'
 
 on: pull_request
 

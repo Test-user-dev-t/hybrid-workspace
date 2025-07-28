@@ -1,4 +1,4 @@
-name: "Project board sync"
+name: 'Project board sync'
 
 on:
   pull_request:
