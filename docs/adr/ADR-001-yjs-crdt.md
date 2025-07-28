@@ -2,7 +2,7 @@
 
 **Status:** Proposed  
 **Date:** 2025-07-27  
-**Deciders:** Test-user-dev-t (orchestrator), claude-ai, chatgpt-ai  
+**Deciders:** Test-user-dev-t (orchestrator), claude-ai, chatgpt-ai
 
 ## Context
 
@@ -23,7 +23,9 @@ The choice of CRDT is foundational and difficult to change later, making this ou
 ## Alternatives Considered
 
 ### Option 1: Yjs ✅ (Selected)
+
 **Pros:**
+
 - Battle-tested at scale (Figma, Linear, Notion-like apps)
 - Excellent ecosystem: `y-prosemirror`, `y-codemirror`, `y-indexeddb`
 - Strong TypeScript support and documentation
@@ -32,30 +34,37 @@ The choice of CRDT is foundational and difficult to change later, making this ou
 - Active development and large community
 
 **Cons:**
+
 - Larger bundle size (~50KB compressed)
 - Somewhat complex internals for debugging
 - Vendor lock-in to Y-ecosystem
 
 ### Option 2: Automerge
+
 **Pros:**
+
 - Beautiful immutable data model
 - Rust-native implementation (aligns with Tauri)
 - Theoretically superior conflict resolution
 - Smaller conceptual surface area
 
 **Cons:**
+
 - Smaller ecosystem, fewer editor integrations
 - Less proven at scale in production apps
 - Would require custom integrations for ProseMirror/CodeMirror
 - Performance characteristics less understood for our use case
 
 ### Option 3: Custom CRDT Implementation
+
 **Pros:**
+
 - Full control over behavior and performance
 - Minimal dependencies
 - Exact fit for our requirements
 
 **Cons:**
+
 - Massive engineering effort (6+ months)
 - High risk of subtle bugs in conflict resolution
 - No ecosystem benefits
@@ -64,12 +73,14 @@ The choice of CRDT is foundational and difficult to change later, making this ou
 ## Consequences
 
 ### Positive
+
 - **Fast development velocity**: Leverage existing editor integrations
 - **Proven reliability**: Building on battle-tested foundations
 - **Future-ready**: Easy path to real-time collaboration
 - **Performance confidence**: Known to handle large documents efficiently
 
 ### Negative
+
 - **Bundle size impact**: ~50KB added to client bundle
 - **Abstraction overhead**: Learning Yjs patterns and debugging model
 - **Migration risk**: Changing CRDTs later would require significant rewrites
@@ -106,8 +117,9 @@ The choice of CRDT is foundational and difficult to change later, making this ou
 ## Votes
 
 - **Test-user-dev-t** — ⏳ (pending)
-- **claude-ai** — ✅ (approve - aligns with ecosystem strategy)  
+- **claude-ai** — ✅ (approve - aligns with ecosystem strategy)
 - **chatgpt-ai** — ⏳ (pending)
+
 ---
 
-*This ADR establishes the foundational data layer for our creative workspace. Future ADRs will build upon this choice for editor integration, persistence, and collaboration features.*
+_This ADR establishes the foundational data layer for our creative workspace. Future ADRs will build upon this choice for editor integration, persistence, and collaboration features._

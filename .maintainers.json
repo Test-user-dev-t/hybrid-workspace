@@ -1,3 +1,1 @@
-[
-  { "handle": "orchestrator", "role": "Orchestrator", "tz": "UTC+5:30" }
-]
+[{ "handle": "orchestrator", "role": "Orchestrator", "tz": "UTC+5:30" }]
