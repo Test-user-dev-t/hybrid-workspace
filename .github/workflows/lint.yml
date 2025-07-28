@@ -7,9 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          version: 8
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm format:check
+          node-version: 20
+          cache: npm
+      - run: npm ci          
+      - run: npm run lint
+      - run: npm run format:check
