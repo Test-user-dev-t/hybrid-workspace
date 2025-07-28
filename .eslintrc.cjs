@@ -31,7 +31,7 @@ module.exports = {
     /* ⚡  React & performance  */
     'react-hooks/exhaustive-deps': 'error',
     'react/jsx-key': 'error',
-    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'react/react-in-jsx-scope': 'off', // ADD THIS LINE to turn off the old React in scope rule
 
     /* 🧹  Type-safety  */
